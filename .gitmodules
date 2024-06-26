@@ -1,0 +1,6 @@
+[submodule "maxon_epos"]
+	path = maxon_epos
+	url = git@github.com:farshad-heravi/maxon_epos.git
+[submodule "src/maxon_epos"]
+	path = src/maxon_epos
+	url = git@github.com:farshad-heravi/maxon_epos.git
