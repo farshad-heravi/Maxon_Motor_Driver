@@ -3,6 +3,7 @@ project(maxon_motor_driver)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  sensor_msgs
   maxon_epos
 )
 
@@ -29,6 +30,13 @@ include_directories(
 )
 
 add_executable(maxon_node src/maxon_driver.cpp)
+include_directories(maxon_node roscpp)
 target_link_libraries( maxon_node
+  ${catkin_LIBRARIES}
+)
+
+add_executable(sine_wave_generator src/create_sine_wave.cpp)
+include_directories(sine_wave_generator roscpp)
+target_link_libraries( sine_wave_generator
   ${catkin_LIBRARIES}
 )

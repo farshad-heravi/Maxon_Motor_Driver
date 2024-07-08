@@ -26,10 +26,11 @@ class MaxonMotor
         int _encoder_resolution;
         int _gear_ratio;
         bool _encoder_inverted_polarity;
+        int _max_qc;
+        int TickPerRound;               // number of total ticks per round
+        int _home_qc;                   // home position of the motor in ticks
 
     public:
-        int TickPerRound;               // number of total ticks per round
-
         MaxonMotor(std::string motor_namemotor_name);
         bool init();                // initialize the epos controller for the motor
         double read();              // returns the current position or velocity based on the control type
@@ -37,6 +38,9 @@ class MaxonMotor
         void write(double value);
         bool set_velocity(double velocity);
         bool set_state(int state);
+        void setZero();
+        void start();
+        void stop();
 
 
 };
